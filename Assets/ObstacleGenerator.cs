@@ -10,6 +10,9 @@ public class ObstacleGenerator : MonoBehaviour
 
     [SerializeField]
     private float SpawnProbabilityPerSecond = 1.0f;
+
+    [SerializeField]
+    private GameObject TitlePrefab;
     private PlayerControls player;
     private float elapsed = 0;
     private Camera cam;
@@ -28,6 +31,7 @@ public class ObstacleGenerator : MonoBehaviour
         bounds.yMin = bottomLeft.y;
         bounds.xMax = topRight.x;
         bounds.yMax = topRight.y;
+        AddTitle();
     }
 
     // Update is called once per frame
@@ -50,6 +54,12 @@ public class ObstacleGenerator : MonoBehaviour
         }
         RemovePassedObstacles();
 
+    }
+
+    private void AddTitle()
+    {
+        var title = Instantiate(TitlePrefab,new Vector3(0,-6,0),Quaternion.identity,null);
+        activeObstacles.Add(title);
     }
 
     private void RemovePassedObstacles()
