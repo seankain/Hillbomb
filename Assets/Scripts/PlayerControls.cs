@@ -16,6 +16,9 @@ public class PlayerControls : MonoBehaviour
     private bool isGrinding = false;
     private bool isPopping = false;
 
+    public bool Grinding { get { return isGrinding; } }
+    public bool Dead { get { return isDead; } }
+
     // Start is called before the first frame update
     void Start()
     {

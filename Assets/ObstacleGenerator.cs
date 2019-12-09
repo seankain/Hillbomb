@@ -56,6 +56,12 @@ public class ObstacleGenerator : MonoBehaviour
 
     }
 
+    public void AddText(GameObject prefab)
+    {
+        var p = Instantiate(prefab, Vector3.zero, Quaternion.identity, null);
+        activeObstacles.Add(p);
+    }
+
     private void AddTitle()
     {
         var title = Instantiate(TitlePrefab,new Vector3(0,-6,0),Quaternion.identity,null);

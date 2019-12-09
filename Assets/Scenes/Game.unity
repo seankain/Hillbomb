@@ -153,7 +153,7 @@ MonoBehaviour:
     type: 3}
   Speed: 1
   PointA: {x: 0, y: 5, z: 0}
-  PointB: {x: 0, y: -4.7, z: 0}
+  PointB: {x: 0, y: -4.5, z: 0}
   groundPieces:
   - {fileID: 473354682}
   - {fileID: 235242969}
@@ -204,7 +204,8 @@ MonoBehaviour:
   ObstaclePrefab: {fileID: 666944111951758962, guid: dad7088546d68554a90a3da77fb75a56,
     type: 3}
   SpawnProbabilityPerSecond: 1
-  TitlePrefab: {fileID: 0}
+  TitlePrefab: {fileID: 6373209354838746427, guid: d878245f0ef3dc644bdb89135926eec1,
+    type: 3}
 --- !u!4 &189573897
 Transform:
   m_ObjectHideFlags: 0
@@ -499,6 +500,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86abb77ce2c37d449439d90d7ff9881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameOverText: {fileID: 4521455583271352900, guid: b0cd60034b20f0c4ab8c5dc37b97eed9,
+    type: 3}
+  SlappyText: {fileID: 6386171308537225977, guid: e82ca09e89b6e174eaf3589874ab7c84,
+    type: 3}
 --- !u!4 &464743509
 Transform:
   m_ObjectHideFlags: 0
