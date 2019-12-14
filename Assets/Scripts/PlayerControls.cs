@@ -11,10 +11,15 @@ public class PlayerControls : MonoBehaviour
     public float Acceleration = 0.1f;
     public float Deceleration = 1f;
     public float DeadCounter = 3.0f;
+    public float PopCounter = 1.0f;
+    private float popElapsed = 0;
     private float deadElapsed = 0;
     private bool isDead = false;
     private bool isGrinding = false;
     private bool isPopping = false;
+    private bool inScorpion = false;
+    private float currentGrindX = float.NegativeInfinity;
+
 
     public bool Grinding { get { return isGrinding; } }
     public bool Dead { get { return isDead; } }
@@ -58,6 +63,15 @@ public class PlayerControls : MonoBehaviour
             }
             else
             {
+                if (isPopping)
+                {
+                    popElapsed += Time.deltaTime;
+                    if (popElapsed >= PopCounter)
+                    {
+                        popElapsed = 0;
+                        isPopping = false;
+                    }
+                }
                 anim.SetBool("Sliding", false);
                 anim.SetBool("Grinding", isGrinding);
                 anim.SetFloat("Direction", horizontal);
@@ -74,7 +88,10 @@ public class PlayerControls : MonoBehaviour
 
     private void Die()
     {
+        anim.SetBool("Sliding", false);
+        anim.SetBool("Grinding", false);
         anim.SetBool("Dead", true);
+
         Speed = 0;
         isDead = true;
 
@@ -97,18 +114,28 @@ public class PlayerControls : MonoBehaviour
     {
         if (collision.tag == "Curb" && isPopping)
         {
-            isGrinding = true;
-            isPopping = false;
+            if (isPopping)
+            {
+                isGrinding = true;
+                currentGrindX = transform.position.x;
+                isPopping = false;
+            }
+            else
+            {
+                isPopping = false;
+                inScorpion = true;
+            }
         }
         else
         {
             isGrinding = false;
+            currentGrindX = float.NegativeInfinity;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Curb" && isGrinding)
+        if (collision.tag == "Curb" && isGrinding && transform.position.x != currentGrindX)
         {
             isGrinding = false;
         }
