@@ -12,8 +12,10 @@ public class PlayerControls : MonoBehaviour
     public float Deceleration = 1f;
     public float DeadCounter = 3.0f;
     public float PopCounter = 1.0f;
+    public float ScorpionTIme = 1.0f;
     private float popElapsed = 0;
     private float deadElapsed = 0;
+    private float scorpionElapsed = 0;
     private bool isDead = false;
     private bool isGrinding = false;
     private bool isPopping = false;
@@ -41,6 +43,19 @@ public class PlayerControls : MonoBehaviour
                 Respawn();
             }
             return;
+        }
+        if (inScorpion)
+        {
+            anim.SetBool("Scorpion", true);
+            scorpionElapsed += Time.deltaTime;
+            if (scorpionElapsed >= ScorpionTIme)
+            {
+                scorpionElapsed = 0;
+                anim.SetBool("Scorpion", false);
+                //transform.position += new Vector3(horizontal * Time.deltaTime * Speed, 0, 0);
+                Die();
+       
+            }
         }
         var horizontal = Input.GetAxis("Horizontal");
         var vertical = Input.GetAxis("Vertical");
@@ -102,6 +117,8 @@ public class PlayerControls : MonoBehaviour
         deadElapsed = 0;
         isDead = false;
         anim.SetBool("Dead", false);
+        anim.SetBool("Scorpion", false);
+        inScorpion = false;
         transform.position = Vector3.zero;
     }
 
@@ -112,7 +129,7 @@ public class PlayerControls : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Curb" && isPopping)
+        if (collision.tag == "Curb")
         {
             if (isPopping)
             {
