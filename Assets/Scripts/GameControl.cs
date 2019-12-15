@@ -38,7 +38,7 @@ public class GameControl : MonoBehaviour
         if (player.Grinding && !playerStartedGrind)
         {
             playerStartedGrind = true;
-            obstacleGenerator.AddText(SlappyText);
+            //obstacleGenerator.AddText(SlappyText);
         }
         else
         {
