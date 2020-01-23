@@ -15,11 +15,31 @@ public class GroundUnit : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     private bool _isIntersection = false;
 
+    private List<MovingObstacleSpawn> IntersectionSpawns = new List<MovingObstacleSpawn>();
+    private List<MovingObstacleSpawn> StraightRoadSpawns = new List<MovingObstacleSpawn>();
+
     public bool IsIntersection
     {
         get { return _isIntersection; }
         set { _isIntersection = value; SetRoadType(value); }
 
+    }
+
+    public bool PositionInBounds(Vector3 position)
+    {
+       return _spriteRenderer.bounds.Contains(position);
+    }
+
+    public MovingObstacleSpawn GetSpawnPosition()
+    {
+        var idx = 0;
+        if (_isIntersection)
+        {
+            idx = Random.Range(0, IntersectionSpawns.Count);
+            return IntersectionSpawns[idx];
+        }
+        idx = Random.Range(0, StraightRoadSpawns.Count);
+        return StraightRoadSpawns[idx];
     }
 
     private void SetRoadType(bool isInterSection)
@@ -65,6 +85,18 @@ public class GroundUnit : MonoBehaviour
             else if(trigger.tag == "Ramp")
             {
                 RampTriggers.Add(trigger);
+            }
+        }
+        var movingObstacleSpawns = gameObject.GetComponentsInChildren<MovingObstacleSpawn>();
+        foreach (var m in movingObstacleSpawns)
+        {
+            if (m.ForIntersection)
+            {
+                IntersectionSpawns.Add(m);
+            }
+            else
+            {
+                StraightRoadSpawns.Add(m);
             }
         }
         //Used random before, now will be a procedure, this should be removed

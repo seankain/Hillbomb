@@ -19,6 +19,8 @@ public class GroundGenerator : MonoBehaviour
     private PlayerControls player;
     private int straightPerIntersection = 5;
     private int straightCounter = 0;
+    //private GraphicRaycaster m_Raycaster;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -86,6 +88,22 @@ public class GroundGenerator : MonoBehaviour
     //        }
     //    }
     //}
+
+    public MovingObstacleSpawn GetSpawnLocation()
+    {
+        var yPos = float.PositiveInfinity;
+        GameObject lowestPiece = null;
+        //Get the piece most recently at the bottom
+        foreach (var g in groundPieces)
+        {
+            if (g.transform.position.y < yPos)
+            {
+                yPos = g.transform.position.y;
+                lowestPiece = g;
+            }
+        }
+        return lowestPiece.GetComponent<GroundUnit>().GetSpawnPosition();
+    }
 
     // Update is called once per frame
     void Update()

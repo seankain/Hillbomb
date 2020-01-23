@@ -60,7 +60,6 @@ public class PlayerControls : MonoBehaviour
         var horizontal = Input.GetAxis("Horizontal");
         var vertical = Input.GetAxis("Vertical");
         var startingPop = Input.GetAxis("Jump") > 0 && isPopping == false;
-        Debug.Log(vertical);
         var isPowersliding = vertical > 0;
         if (startingPop)
         {
