@@ -220,7 +220,7 @@ MonoBehaviour:
     type: 3}
   LeftPaintSprite: {fileID: 2196225590103282992, guid: 829534ac32e16b2439898669baf39f7c,
     type: 3}
-  RightPaintSprite: {fileID: 3348055716429834454, guid: 829534ac32e16b2439898669baf39f7c,
+  RightPaintSprite: {fileID: -2023000499195774864, guid: 829534ac32e16b2439898669baf39f7c,
     type: 3}
   UpPaintSprite: {fileID: 7026218326505353406, guid: 829534ac32e16b2439898669baf39f7c,
     type: 3}

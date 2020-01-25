@@ -76,6 +76,11 @@ public class Vehicle : MovingObstacle
             _currentChassisSprite = RightChassisSprite;
             _currentPaintSprite = RightPaintSprite;
         }
+        if (Direction == Vector3.down)
+        {
+            _currentChassisSprite = DownChassisSprite;
+            _currentPaintSprite = DownPaintSprite;
+        }
 
         var spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
         foreach (var sr in spriteRenderers)
