@@ -37,15 +37,15 @@ public class ObstacleGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        elapsed += Time.deltaTime;
-        if (elapsed > 1)
-        {
-            elapsed = 0;
-            if (Random.Range(0, 1) < SpawnProbabilityPerSecond)
-            {
-                SpawnObstacle();
-            }
-        }
+        //elapsed += Time.deltaTime;
+        //if (elapsed > 1)
+        //{
+        //    elapsed = 0;
+        //    if (Random.Range(0, 1) < SpawnProbabilityPerSecond)
+        //    {
+        //        SpawnObstacle();
+        //    }
+        //}
         foreach (var g in activeObstacles)
         {
             var oldPos = g.transform.position;

@@ -36,58 +36,7 @@ public class GroundGenerator : MonoBehaviour
         bounds.yMax = topRight.y;
         ppcam = cam.GetComponent<PixelPerfectCamera>();
         player = FindObjectOfType<PlayerControls>();
-        //Seed();
     }
-
-
-    //private void Seed()
-    //{
-    //    //for(var x = bounds.xMin -1 ; x < bounds.xMax + 1; x++)
-    //    //{
-    //    //for (var y = bounds.yMin - 1; y < bounds.yMax + 1; y++)
-    //    //{
-    //        PlaceGroundTile(new Vector3(0, 0, 0));
-    //    //}
-
-    //    //}
-    //}
-
-    //private void PlaceGroundTile(Vector3 location)
-    //{
-    //    straightCounter++;
-    //    var g = Instantiate<GameObject>(GroundPrefab, location, Quaternion.identity, null);
-    //    if (straightCounter == straightPerIntersection)
-    //    {
-    //        g.GetComponent<GroundUnit>().SetRoadType(true);
-    //        straightCounter = 0;
-    //    }
-    //    groundPieces.Add(g);
-
-    //}
-
-    //private void GenerateRow()
-    //{
-    //    if (groundPieces.Last().transform.position.y > (bounds.yMin - SpawnOffset))
-    //    {
-    //        var y = bounds.yMin - (bounds.height + SpawnOffset);
-    //        PlaceGroundTile(new Vector3(0, y, 0));
-    //    }
-    //}
-
-    //private void RemoveRow()
-    //{
-    //    var y = bounds.yMax + (bounds.height + SpawnOffset);
-    //    for (var i = groundPieces.Count - 1; i >= 0; i--)
-    //    {
-    //        if (groundPieces[i].transform.position.y > y)
-    //        {
-    //            var oldPiece = groundPieces[i];
-    //            groundPieces.Remove(oldPiece);
-    //            DestroyImmediate(oldPiece);
-
-    //        }
-    //    }
-    //}
 
     public MovingObstacleSpawn GetSpawnLocation()
     {
@@ -109,7 +58,6 @@ public class GroundGenerator : MonoBehaviour
     void Update()
     {
         Speed = player.Speed;
-        //GenerateRow();
         foreach (var g in groundPieces)
         {
             var oldPos = g.transform.position;
@@ -122,7 +70,6 @@ public class GroundGenerator : MonoBehaviour
                 if (straightCounter == straightPerIntersection)
                 {
                     gu.IsIntersection = true;
-                   // gu.SetRoadType(true);
                     straightCounter = 0;
                 }
                 else
@@ -134,7 +81,6 @@ public class GroundGenerator : MonoBehaviour
             g.transform.position = oldPos;
 
         }
-        //RemoveRow();
 
     }
 }

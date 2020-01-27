@@ -11,6 +11,10 @@ public class Obstacle : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public void UpdateTraits() {
+
+    }
+
     // Start is called before the first frame update
     void Start()
     {

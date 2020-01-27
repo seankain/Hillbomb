@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 666944111951758962}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.35, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -107,7 +107,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6, y: 0.6}
+  m_Size: {x: 0.1, y: 0.1}
   m_EdgeRadius: 0
 --- !u!114 &3188510413090983661
 MonoBehaviour:
@@ -122,9 +122,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ObstacleSprites:
-  - {fileID: 2437182859119676375, guid: 3b81c4deb04d13440b7c69c93efb6c14, type: 3}
-  - {fileID: 8466950471419610841, guid: 3b81c4deb04d13440b7c69c93efb6c14, type: 3}
-  - {fileID: -6576189189128051720, guid: 3b81c4deb04d13440b7c69c93efb6c14, type: 3}
+  - {fileID: 4092514144187842027, guid: 88c7b35af030cef4e88d5dd5d910eede, type: 3}
+  - {fileID: -675650125194207516, guid: 88c7b35af030cef4e88d5dd5d910eede, type: 3}
+  - {fileID: 8248780198173348339, guid: 88c7b35af030cef4e88d5dd5d910eede, type: 3}
+  - {fileID: -1050014950639799230, guid: 88c7b35af030cef4e88d5dd5d910eede, type: 3}
+  - {fileID: -8172574077901175512, guid: 88c7b35af030cef4e88d5dd5d910eede, type: 3}
+  - {fileID: 5119320867218476561, guid: 88c7b35af030cef4e88d5dd5d910eede, type: 3}
 --- !u!50 &4144930559936807753
 Rigidbody2D:
   serializedVersion: 4
