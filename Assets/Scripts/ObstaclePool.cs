@@ -46,7 +46,7 @@ public class ObstaclePool : MonoBehaviour
     {
        // var spawn = groundGenerator.GetSpawnLocation();
         var movingObstacle = obstacle.GetComponent<Obstacle>();
-        var pos = new Vector3(Random.Range(SpawnXMin, SpawnXMax), -5, 0);
+        var pos = new Vector3(Random.Range(SpawnXMin, SpawnXMax), Random.Range(-5,-10), 0);
         //var pos = spawn.transform.position;
         movingObstacle.transform.position = pos;
         movingObstacle.UpdateTraits();
