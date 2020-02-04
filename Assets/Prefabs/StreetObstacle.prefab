@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3188510413090983661}
   - component: {fileID: 4144930559936807753}
   m_Layer: 10
-  m_Name: Obstacle
+  m_Name: StreetObstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -122,14 +122,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ObstacleSprites:
-  - {fileID: 4092514144187842027, guid: 88c7b35af030cef4e88d5dd5d910eede, type: 3}
-  - {fileID: -675650125194207516, guid: 88c7b35af030cef4e88d5dd5d910eede, type: 3}
-  - {fileID: 8248780198173348339, guid: 88c7b35af030cef4e88d5dd5d910eede, type: 3}
-  - {fileID: -1050014950639799230, guid: 88c7b35af030cef4e88d5dd5d910eede, type: 3}
+  - {fileID: -8060193561349919720, guid: 88c7b35af030cef4e88d5dd5d910eede, type: 3}
   - {fileID: -8172574077901175512, guid: 88c7b35af030cef4e88d5dd5d910eede, type: 3}
+  - {fileID: -1974018022727384677, guid: 88c7b35af030cef4e88d5dd5d910eede, type: 3}
   - {fileID: 5119320867218476561, guid: 88c7b35af030cef4e88d5dd5d910eede, type: 3}
-  - {fileID: -9187242211370392559, guid: 88c7b35af030cef4e88d5dd5d910eede, type: 3}
-  - {fileID: 6555408642238913036, guid: 88c7b35af030cef4e88d5dd5d910eede, type: 3}
+  - {fileID: -1050014950639799230, guid: 88c7b35af030cef4e88d5dd5d910eede, type: 3}
+  - {fileID: 4092514144187842027, guid: 88c7b35af030cef4e88d5dd5d910eede, type: 3}
 --- !u!50 &4144930559936807753
 Rigidbody2D:
   serializedVersion: 4

@@ -19,7 +19,7 @@ TagManager:
   - Player
   - Obstacle
   - Title
-  - 
+  - Vehicle
   - 
   - 
   - 
@@ -51,6 +51,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1004634179
+    locked: 0
+  - name: Vehicle
+    uniqueID: 942543335
     locked: 0
   - name: Title
     uniqueID: 2594385721

@@ -19,7 +19,7 @@ public class ObstaclePool : MonoBehaviour
     private List<Obstacle> activeObstacles = new List<Obstacle>();
     private PlayerControls player;
     private float spawnElapsed = 0;
-    private float SpawnCooldown = 10f;
+    private float SpawnCooldown = 5f;
 
 
     // Start is called before the first frame update
@@ -55,8 +55,10 @@ public class ObstaclePool : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (activeObstacles.Count < PoolSize)
+        spawnElapsed += Time.deltaTime;
+        if (spawnElapsed >= SpawnCooldown && activeObstacles.Count < PoolSize)
         {
+            spawnElapsed = 0;
             SpawnObstacle();
         }
         foreach (var obstacle in activeObstacles)
